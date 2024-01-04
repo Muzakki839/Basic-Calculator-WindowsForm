@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace BasicCalculator
@@ -7,8 +9,7 @@ namespace BasicCalculator
     public partial class Form1 : Form
     {
         DataTable table = new DataTable();
-        string input = string.Empty;        // String storing user input
-        bool isResultDisplay = false;    // Flag to track if the result is displayed
+        string input = string.Empty;
 
         bool isStart = true;
 
@@ -27,24 +28,31 @@ namespace BasicCalculator
                 isStart = false;
             }
 
-            if (isResultDisplay)
+            Button button = (Button)sender;
+            switch (button.Text)
             {
-                input = string.Empty;
-                isResultDisplay = false;
+                default:
+                    input += button.Text;
+                    textBox1.Text += button.Text;
+                    break;
+                case "(":
+                    // Jika sebelumnya kurung buka tidak diikuti operator, tambahkan operator kali secara otomatis
+                    if (!string.IsNullOrEmpty(input) && (char.IsDigit(input.Last()) || input.EndsWith(")")))
+                    {
+                        input += "*";
+                        textBox1.Text += "*";
+                    }
+
+                    input += button.Text;
+                    textBox1.Text += button.Text;
+                    break;
             }
 
-            Button button = (Button)sender;
-            input += button.Text;
-            textBox1.Text += button.Text;
         }
 
         private void ButtonOperator_Click(object sender, EventArgs e)
         {
             isStart = false;
-            if (isResultDisplay)
-            {
-                isResultDisplay = false;
-            }
 
             Button button = (Button)sender;
             switch (button.Text)
@@ -58,7 +66,6 @@ namespace BasicCalculator
                     textBox1.Text += button.Text;
                     break;
             }
-            
         }
 
         private void ButtonEquals_Click(object sender, EventArgs e)
@@ -68,6 +75,17 @@ namespace BasicCalculator
 
         private void Evaluate()
         {
+            // Check if there are open parentheses without corresponding closing parentheses
+            int openParenthesisCount = input.Count(c => c == '(');
+            int closeParenthesisCount = input.Count(c => c == ')');
+
+            for (int i = 0; i < openParenthesisCount - closeParenthesisCount; i++)
+            {
+                input += ")";
+                textBox1.Text += ")";
+            }
+
+            // Eval
             if (!string.IsNullOrEmpty(input))
             {
                 try
@@ -75,7 +93,6 @@ namespace BasicCalculator
                     object result = table.Compute(input, "");
                     textBox1.Text = result.ToString();
                     input = result.ToString();
-                    isResultDisplay = true;
                 }
                 catch (Exception)
                 {
@@ -97,7 +114,6 @@ namespace BasicCalculator
         {
             textBox1.Text = "";
             input = string.Empty;
-            isResultDisplay = false;
 
             isStart = true;
         }
