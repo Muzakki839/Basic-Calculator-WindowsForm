@@ -38,53 +38,60 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(108, 73);
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F);
+            this.txtUser.Location = new System.Drawing.Point(88, 93);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(441, 22);
+            this.txtUser.Size = new System.Drawing.Size(441, 47);
             this.txtUser.TabIndex = 0;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(108, 145);
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F);
+            this.txtPass.Location = new System.Drawing.Point(88, 212);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(441, 22);
+            this.txtPass.Size = new System.Drawing.Size(441, 47);
             this.txtPass.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 54);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(84, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.Size = new System.Drawing.Size(186, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(105, 126);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(92, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.Size = new System.Drawing.Size(178, 39);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(108, 219);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(88, 290);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(441, 52);
             this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "button1";
+            this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(108, 287);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(88, 358);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(441, 52);
             this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "button2";
+            this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -92,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(621, 450);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
