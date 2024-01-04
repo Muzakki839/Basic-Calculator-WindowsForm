@@ -49,6 +49,9 @@
             this.buttonKoma = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -261,9 +264,9 @@
             // 
             this.buttonHasil.BackColor = System.Drawing.SystemColors.Window;
             this.buttonHasil.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHasil.Location = new System.Drawing.Point(190, 421);
+            this.buttonHasil.Location = new System.Drawing.Point(36, 497);
             this.buttonHasil.Name = "buttonHasil";
-            this.buttonHasil.Size = new System.Drawing.Size(230, 60);
+            this.buttonHasil.Size = new System.Drawing.Size(384, 60);
             this.buttonHasil.TabIndex = 17;
             this.buttonHasil.Text = "=";
             this.buttonHasil.UseVisualStyleBackColor = false;
@@ -298,10 +301,49 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.Window;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(190, 421);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(60, 60);
+            this.button9.TabIndex = 20;
+            this.button9.Text = "%";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.ButtonOperator_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.Window;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(278, 418);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(60, 60);
+            this.button11.TabIndex = 21;
+            this.button11.Text = "(";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.ButtonNumber_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.SystemColors.Window;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(360, 418);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(60, 60);
+            this.button12.TabIndex = 22;
+            this.button12.Text = ")";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.ButtonNumber_Click);
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(454, 503);
+            this.ClientSize = new System.Drawing.Size(454, 578);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.buttonKoma);
             this.Controls.Add(this.buttonHasil);
             this.Controls.Add(this.buttonBagi);
@@ -354,6 +396,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
 

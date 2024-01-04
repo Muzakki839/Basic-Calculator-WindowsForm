@@ -47,8 +47,18 @@ namespace BasicCalculator
             }
 
             Button button = (Button)sender;
-            input += button.Text;
-            textBox1.Text += button.Text;
+            switch (button.Text)
+            {
+                default:
+                    input += button.Text;
+                    textBox1.Text += button.Text;
+                    break;
+                case "%":
+                    input += "/100";
+                    textBox1.Text += button.Text;
+                    break;
+            }
+            
         }
 
         private void ButtonEquals_Click(object sender, EventArgs e)
@@ -94,7 +104,7 @@ namespace BasicCalculator
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Developer:\nNama Developer");
+            MessageBox.Show("Developer:\nMuzakki Abdul Aziz\nMuhammad Aziz\nErik Anindiya");
         }
     }
 }
