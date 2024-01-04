@@ -79,6 +79,13 @@ namespace BasicCalculator
             int openParenthesisCount = input.Count(c => c == '(');
             int closeParenthesisCount = input.Count(c => c == ')');
 
+            // Jika diakhiri dengan operator, otomatis akhiri dengan 0
+            if (!string.IsNullOrEmpty(input) && IsOperator(input.Last().ToString()))
+            {
+                input += "0";
+                textBox1.Text += "0";
+            }
+
             for (int i = 0; i < openParenthesisCount - closeParenthesisCount; i++)
             {
                 input += ")";
@@ -102,6 +109,12 @@ namespace BasicCalculator
 
                 isStart = true;
             }
+        }
+
+        private bool IsOperator(string _input)
+        {
+            List<string> operators = new List<string> { "+", "-", "*", "/" };
+            return operators.Contains(_input);
         }
 
         private void ButtonClear_Click(object sender, EventArgs e)
